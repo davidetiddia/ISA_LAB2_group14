@@ -363,7 +363,8 @@ part_prod_2_11(16) <= carry_FA(part_prod_1_6(25), part_prod_1_7(23), part_prod_1
 part_prod_2_11(17) <= carry_FA(part_prod_1_3(32), part_prod_1_4(30), part_prod_1_5(28));
 part_prod_2_11(18) <= carry_FA(part_prod_1_3(33), part_prod_1_4(31), part_prod_1_5(29));
 part_prod_2_11(19) <= carry_FA(part_prod_1_0(39), part_prod_1_1(38), part_prod_1_2(36));
-part_prod_2_11(20) <= carry_FA(part_prod_1_0(40), part_prod_1_1(39), part_prod_1_2(38)); 
+--**** ERROR ****
+part_prod_2_11(20) <= carry_FA(part_prod_1_0(40), part_prod_1_1(39), part_prod_1_2(37)); 
 part_prod_2_11(21) <= part_prod_1_12(19);
 part_prod_2_11(23 downto 22) <= part_prod_1_11(23 downto 22);
 ------------------------------
@@ -504,7 +505,8 @@ part_prod_3_7(5) <= part_prod_2_10(0);
 part_prod_3_7(6) <= carry_FA(part_prod_2_0(18), part_prod_2_1(17), part_prod_2_2(15));
 part_prod_3_7(7) <= carry_FA(part_prod_2_0(19), part_prod_2_1(18), part_prod_2_2(16));
 part_prod_3_7(8) <= carry_FA(part_prod_2_3(15), part_prod_2_4(13), part_prod_2_5(11));
-part_prod_3_7(9) <= carry_FA(part_prod_2_3(16), part_prod_2_4(14), part_prod_2_5(13));
+--****ERROR****
+part_prod_3_7(9) <= carry_FA(part_prod_2_3(16), part_prod_2_4(14), part_prod_2_5(12));
 part_prod_3_7(10) <= carry_FA(part_prod_2_6(11), part_prod_2_7(9), part_prod_2_8(7));
 part_prod_3_7_gen: for i in 11 to 30 generate
     part_prod_3_7(i) <= carry_FA(part_prod_2_6(i+1), part_prod_2_7(i-1), part_prod_2_8(i-3));
@@ -609,16 +611,18 @@ part_prod_4_5(2) <= carry_HA(part_prod_3_0(10), part_prod_3_1(9));
 part_prod_4_5(3) <= carry_HA(part_prod_3_0(11), part_prod_3_1(10));
 part_prod_4_5(4) <= carry_HA(part_prod_3_3(7), part_prod_3_4(5));
 part_prod_4_5(5) <= carry_HA(part_prod_3_3(8), part_prod_3_4(6));
-part_prod_4_5(6) <= carry_HA(part_prod_3_6(4), part_prod_3_7(2));
-part_prod_4_5(7) <= carry_HA(part_prod_3_6(5), part_prod_3_7(3));
+-- **** ERROR ****
+part_prod_4_5(6) <= carry_HA(part_prod_3_6(3), part_prod_3_7(1));
+part_prod_4_5(7) <= carry_HA(part_prod_3_6(4), part_prod_3_7(2));
 part_prod_4_5_gen: for i in 8 to 43 generate
 part_prod_4_5(i) <=  carry_FA(part_prod_3_6(i-3), part_prod_3_7(i-5), part_prod_3_8(i-7));
 end generate;
 part_prod_4_5(44) <= carry_HA(part_prod_3_6(41), part_prod_3_7(39));
 part_prod_4_5(45) <= carry_FA(part_prod_3_3(48), part_prod_3_4(46), part_prod_3_5(44)); 
 part_prod_4_5(46) <= carry_HA(part_prod_3_3(49), part_prod_3_4(47));
-part_prod_4_5(47) <= carry_FA(part_prod_3_0(56), part_prod_3_1(55), part_prod_3_2(54));
-part_prod_4_5(48) <= carry_HA(part_prod_3_0(57), part_prod_3_1(56));
+--***** ERROR *****
+part_prod_4_5(47) <= carry_FA(part_prod_3_0(55), part_prod_3_1(54), part_prod_3_2(52));
+part_prod_4_5(48) <= carry_HA(part_prod_3_0(56), part_prod_3_1(55));
 ----------------------------
 -- stage 5 signals => d = 4;
 part_prod_5_0(5 downto 0) <= part_prod_4_0(5 downto 0); 
